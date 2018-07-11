@@ -1,0 +1,10 @@
+#################dialog对话框
+1.？visiable.sync修饰符
+2.？dialog嵌套的情况下,内层对话框的append-to-body的属性为true
+3.center属性用于将标题和footer插槽中的内容居中
+4.？Dialog 的内容是懒渲染的，即在第一次被打开之前，传入的默认 slot 不会被渲染到 DOM 上。因此，如果需要执行 DOM 操作，或通过 ref 获取相应组件，请在 open 事件回调中进行。
+
+如果 visible 属性绑定的变量位于 Vuex 的 store 内，那么 .sync 不会正常工作。此时需要去除 .sync 修饰符，同时监听 Dialog 的 open 和 close 事件，在事件回调中执行 Vuex 中对应的 mutation 更新 visible 属性绑定的变量的值。
+
+
+#################tooltip文字提示
